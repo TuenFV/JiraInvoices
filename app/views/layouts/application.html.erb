@@ -6,6 +6,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui@4.1.4/dist/css/coreui.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://coreui.io/demo/4.0/free/css/style.css" rel="stylesheet" crossorigin="anonymous">
+
     <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@4.1.4/dist/js/coreui.bundle.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@4.1.4/dist/js/coreui.min.js" crossorigin="anonymous"></script>
@@ -14,7 +16,14 @@
   </head>
 
   <body>
-    <%#= render "shared/sidebar" %>
-    <%= yield %>
+    <%= render "shared/sidebar" %>
+    <div class="wrapper d-flex flex-column min-vh-100 bg-light">
+      <%= render 'shared/header' %>
+      <div class="body flex-grow-1 px-3">
+        <div class="container-lg">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
