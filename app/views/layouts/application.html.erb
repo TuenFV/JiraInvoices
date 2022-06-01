@@ -10,11 +10,12 @@
     <%= javascript_importmap_tags %>
     <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui@4.1.4/dist/css/coreui.min.css" rel="stylesheet" integrity="sha384-YUdsYsgRlkUONN8mdJ0FYda0kzlomX2TWturtRobleAB8py9rvyfGQzJdLRc9lFL" crossorigin="anonymous">
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-q9CRHqZndzlxGLOj+xrdLDJa9ittGte1NksRmgJKeCV9DrM7Kz868XYqsKWPpAmn" crossorigin="anonymous"></script>
+    <!--script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-q9CRHqZndzlxGLOj+xrdLDJa9ittGte1NksRmgJKeCV9DrM7Kz868XYqsKWPpAmn" crossorigin="anonymous"></script-->
     <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@4.1.4/dist/js/coreui.min.js" integrity="sha384-dGvJOX3jCDS34Y1pvugvoTyKfv0/evHukD3WKQnQklWozNmo5RpGLiHFaXxhgKAl" crossorigin="anonymous"></script>
   </head>
 
   <body>
+    <%#= render "shared/sidebar" %>
     <%= yield %>
   </body>
 </html>
