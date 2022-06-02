@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  code: MyString
+  jira_project_id: 1
+  organization: one
+
+two:
+  name: MyText
+  code: MyString
+  jira_project_id: 1
+  organization: two
