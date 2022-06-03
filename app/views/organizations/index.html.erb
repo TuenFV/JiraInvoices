@@ -1,0 +1,10 @@
+<h1>Organizations#index</h1>
+<p><%= link_to 'New Organization', new_organization_path, class:"btn btn-sm btn-primary" %></p>
+
+<h4>List of organizations:</h4>
+
+<% @organizations.each do |organization| %>
+  <p>
+    <%= link_to organization.domain, organization %>
+  </p>
+<% end %>

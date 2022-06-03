@@ -1,0 +1,14 @@
+<h1>#Show action from organization</h1>
+
+<div>
+  <strong>Domain:   </strong><%= @organization.domain %><br>
+  <strong>Added on: </strong><%= @organization.created_at.to_date %>
+</div>
+<div class="mt-4">
+  <%= link_to "Update", edit_organization_path(@organization), class:"btn btn-sm btn-primary" %>
+  <%= link_to "Back", organizations_path, class:"btn btn-sm btn-secondary" %>
+</div>
+
+<div class=" mt-4">
+  <%= button_to "Delete", @organization, method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-sm btn-danger" %>
+</div>
