@@ -1,6 +1,6 @@
 module Jira
   class GetProjects
-    def initialize(domain)
+    def self.perform(domain)
       jira_projects = Jira::FetchResource.new("#{domain}","project").perform
 
       jira_projects.each do |jira_project|
@@ -16,4 +16,4 @@ module Jira
   end
 end
 
-# Jira::GetProjects.new("tuenfv")
+# Jira::GetProjects.perform("tuenfv")
