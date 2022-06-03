@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+  <div class="col-lg-8 col-xl-7">
+    <%= form_with(model: organization) do |form| %>
+      <% if organization.errors.any? %>
+        <div style="color: red" class="mb-2">
+          <h5>Can't add this domain. Because:</h5>
+
+          <ul>
+            <% organization.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+
+        <div class="form-floating">
+          <%= form.label :domain, "Input Your Domain:" %>
+          <%= form.text_field :domain, class:"form-control" %>
+        </div>
+      <% else %>
+        <div class="form-floating">
+          <%= form.text_field :domain, class:"form-control", placeholder:"Input your domain" %>
+          <%= form.label :domain, "What is your Domain?" %>
+        </div>
+      <% end %>
+
+      <div>
+        <br/>
+        <%= form.submit "Confirm", class:"btn btn-primary" %>
+        <%= link_to "Cancel", organizations_path, class: "btn btn-secondary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
