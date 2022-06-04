@@ -1,14 +1,18 @@
 module Jira
   class GetProjects
-    def self.perform(domain)
-      jira_projects = Jira::FetchResource.new("#{domain}","project").perform
+    def initialize(organization)
+      @organization = organization
+    end
+
+    def perform
+      jira_projects = Jira::FetchResource.new("#{@organization}","project").perform
 
       jira_projects.each do |jira_project|
         project = Project.find_or_initialize_by(jira_project_id: jira_project[:id])
 
         project.name = jira_project[:name]
         project.code = jira_project[:key]
-        project.organization_id = Organization.find_by_domain(domain).id
+        project.organization_id = Organization.find_by_domain(@organization).id
 
         project.save
       end
@@ -16,4 +20,4 @@ module Jira
   end
 end
 
-# Jira::GetProjects.perform("tuenfv")
+# Jira::GetProjects.new("tuenfv").perform
