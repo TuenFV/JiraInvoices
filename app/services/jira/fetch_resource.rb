@@ -5,7 +5,8 @@ module Jira
   class FetchResource
     def initialize(organization,resource)
       # https://tuenfv.atlassian.net/rest/api/3/project
-      @url = "https://#{organization}.atlassian.net/rest/api/3/#{resource}"
+      @organization = organization
+      @url = "https://#{@organization.domain}.atlassian.net/rest/api/3/#{resource}"
     end
 
     def perform
