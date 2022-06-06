@@ -1,7 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+# Create Organizations: tuenfv, duyetvn, test123
+Organization.create!([
+  {domain: "tuenfv"},
+  {domain: "duyetvn"},
+  {domain: "test123"}])
+
+@organization = Organization.find_by_domain("tuenfv")
+
+# Get Projects from Jira which belongs to the first organization.
+Jira::GetProjects.new(@organization).perform
+
+# Get Users from Jira which belongs to the first organization.
+Jira::GetUsers.new(@organization).perform
