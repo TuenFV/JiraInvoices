@@ -40,9 +40,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_02_103652) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "full_name"
-    t.integer "account_id"
-    t.integer "organiztion_id"
+    t.string "name"
+    t.string "email"
+    t.string "account_id"
+    t.boolean "active"
+    t.integer "organization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
