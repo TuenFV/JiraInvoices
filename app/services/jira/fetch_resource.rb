@@ -3,9 +3,10 @@ require 'uri'
 
 module Jira
   class FetchResource
-    def initialize(resource)
+    def initialize(organization,resource)
       # https://tuenfv.atlassian.net/rest/api/3/project
-      @url = "https://tuenfv.atlassian.net/rest/api/3/#{resource}"
+      @organization = organization
+      @url = "https://#{@organization.domain}.atlassian.net/rest/api/3/#{resource}"
     end
 
     def perform

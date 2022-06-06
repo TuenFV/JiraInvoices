@@ -2,5 +2,5 @@ class Organization < ApplicationRecord
   has_many :projects, dependent: :destroy
   has_many :users
 
-  validates :domain, presence: true
+  validates :domain, presence: true, uniqueness: true
 end
