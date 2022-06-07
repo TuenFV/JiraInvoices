@@ -6,8 +6,6 @@ Organization.create([
 
 @organization = Organization.find_by_domain("tuenfv")
 
-User.create(name: "Not Assign Yet", organization_id: @organization.id)
-
 # Get Projects from Jira of organization "tuenfv".
 Jira::GetProjects.new(@organization).perform
 
