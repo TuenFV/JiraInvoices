@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_08_131010) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_10_143518) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -62,6 +62,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_08_131010) do
     t.datetime "startTime"
     t.datetime "updateTime"
     t.integer "jira_worklog_id"
+    t.string "jira_author_account_id", null: false
     t.index ["issue_id"], name: "index_worklogs_on_issue_id"
   end
 
