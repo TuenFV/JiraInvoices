@@ -14,3 +14,6 @@ Jira::GetUsers.new(@organization).perform
 
 # Get Issues from Jira
 Jira::GetIssues.new(@organization).perform
+
+# Get Worklogs
+Jira::GetWorklogs.new(@organization).perform
