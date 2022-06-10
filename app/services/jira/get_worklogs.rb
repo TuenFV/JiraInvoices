@@ -10,8 +10,8 @@ module Jira
         response_worklogs = Jira::FetchResource.new(@organization,endpoint).perform
         response_worklogs[:worklogs].each do |jira_worklog|
           worklog = issue.worklogs.find_or_initialize_by(jira_worklog_id: jira_worklog[:id])
-          worklog.timeSpent  = jira_worklog[:timeSpentSeconds]
-          worklog.startTime  = jira_worklog[:started]
+          worklog.time_spent  = jira_worklog[:timeSpentSeconds]
+          worklog.start_time  = jira_worklog[:started]
           worklog.jira_author_account_id = jira_worklog[:author][:accountId]
           worklog.save
         end
